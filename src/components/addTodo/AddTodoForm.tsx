@@ -40,6 +40,7 @@ export const AddTodoForm = (props: AddTodoProps) => {
           details: "",
           color: "",
           date: new Date().toDateString(),
+          done: false
         }}
         validationSchema={validationSchema}
         onSubmit={(data, { setSubmitting }) => {
@@ -114,11 +115,11 @@ export const AddTodoForm = (props: AddTodoProps) => {
                 </div>
               ))}
             </div>
-            <Field name="star">
+            <Field name="done">
               {({ field, meta }: any) => (
                 <div>
                   <FormControlLabel
-                    control={<Checkbox name="star" />}
+                    control={<Checkbox name="done" />}
                     label="Done"
                     {...field}
                   />
