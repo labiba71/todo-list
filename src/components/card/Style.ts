@@ -16,6 +16,9 @@ export const useStyles =
     title: {
       fontSize: '12px'
     },
+    notTitleCross: {
+      textDecoration: 'line-through'
+    },
     starSelected: {
       backgroundColor: '#FECD03',
       borderRadius: '50%',

@@ -34,7 +34,7 @@ export const CardComponent = (props: { todo: Todo }) => {
     <>
       <Card className={classes.root}>
         <CardHeader
-          title={<Typography className={classes.noteTitle} variant="h6">{props.todo.title}</Typography>}
+          title={<Typography className={`${props.todo.done? classes.notTitleCross : classes.noteTitle}`} variant="h6">{props.todo.title}</Typography>}
         />
         <CardContent>
           <Typography className={classes.noteDetail} variant="body2" color="textPrimary" component="p">
