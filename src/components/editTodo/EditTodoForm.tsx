@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from "formik";
-import { Button, TextField, FormControlLabel, Typography } from "@material-ui/core";
+import { Button, TextField, FormControlLabel, Typography, Checkbox } from "@material-ui/core";
 import * as yup from "yup";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { useStyles } from './Style';
@@ -43,6 +43,7 @@ export const EditTodoForm = (props: EditTodoProps) => {
           color: props.todo.color,
           date: props.todo.date,
           id: props.todo.id,
+          done: props.todo.done
         }}
         validationSchema={validationSchema}
         onSubmit={(data, { setSubmitting }) => {
@@ -117,6 +118,19 @@ export const EditTodoForm = (props: EditTodoProps) => {
                 </div>
               ))}
             </div>
+            <Field name="done">
+              {({ field, meta }: any) => (
+                <div>
+                  <FormControlLabel
+                    control={<Checkbox name="done" />}
+                    label="Done"
+                    {...field}
+                    value={values.done}
+                    checked={values.done}
+                  />
+                </div>
+              )}
+            </Field>
 
             <div className={classes.buttons}>
               <Button
