@@ -4,6 +4,7 @@ export interface Todo {
   details: string;
   color: string;
   date: string;
+  done: boolean;
 }
 
 export interface State {

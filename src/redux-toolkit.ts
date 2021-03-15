@@ -22,6 +22,7 @@ const todoSlice = createSlice({
           details: string;
           color: string;
           date: string;
+          done: boolean;
         }>
       ) => {
         state.push(payload);
@@ -31,11 +32,13 @@ const todoSlice = createSlice({
         details,
         color,
         date,
+        done
       }: {
         title: string;
         details: string;
         color: string;
         date: string;
+        done: boolean;
       }) => ({
         payload: {
           id: uuid(),
@@ -43,6 +46,7 @@ const todoSlice = createSlice({
           details,
           color,
           date,
+          done
         },
       }),
     },
@@ -55,6 +59,7 @@ const todoSlice = createSlice({
         title: string;
         details: string;
         color: string;
+        done: boolean
       }>
     ) => {
       const todoEdit = state.find((todo) => todo.id === payload.id);
@@ -62,6 +67,7 @@ const todoSlice = createSlice({
         todoEdit.title = payload.title;
         todoEdit.details = payload.details;
         todoEdit.color = payload.color;
+        todoEdit.done = payload.done;
       }
     },
     remove: (
