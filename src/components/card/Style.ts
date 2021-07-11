@@ -7,7 +7,7 @@ export const useStyles =
       height: '14rem',
       textAlign: "left",
       backgroundColor: (props: { todo: { color: string } }) => props.todo.color,
-      margin: "10px"
+      margin: "10px 0"
     },
     media: {
       height: 0,
