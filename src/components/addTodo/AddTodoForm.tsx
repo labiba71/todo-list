@@ -48,6 +48,7 @@ export const AddTodoForm = (props: AddTodoProps) => {
           dispatch(create(data))
           setSubmitting(false);
           props.setOpen(false);
+          window.location.reload(true);
           console.log(data);
 
         }}
